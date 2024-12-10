@@ -1,0 +1,28 @@
+#diary.py
+diary_entries = []
+while True:
+    print("\nOptions:")
+    print("1. Add Entry")
+    print("2. View Entries")
+    print("3. Exit")
+
+    choice = input("Choose an option (1-3): ")
+
+    if choice == '1':
+        entry = input("Enter your diary entry: ")
+        diary_entries.append(entry)
+        print("Entry added.")
+
+    elif choice == '2':
+        if not diary_entries:
+            print("No entries in the diary.")
+        else:
+            print("Diary Entries:")
+            for index, entry in enumerate(diary_entries, start=1):
+                print(f"{index}. {entry}")
+                
+    elif choice == '3':
+        print("Exiting the application.")
+        break
+    else:
+        print("Invalid choice. Please try again.")
